@@ -11,7 +11,12 @@ PageBuilder.module("App.List", function(List, PageBuilder, Backbone, Marionette,
 
     List.Panel = Marionette.ItemView.extend({
         tagName: 'div',
-        template: _.template(Templates.RowListPanel)
+        template: _.template(Templates.RowListPanel),
+
+        triggers: {
+            "click a.js-add-row": "row:new"
+        }
+
     });
 
 

@@ -17,6 +17,11 @@ PageBuilder.module("App.List", function(List, PageBuilder, Backbone, Marionette,
                 rowListLayout.panelRegion.show(rowListPanel);
             });
 
+            rowListPanel.on("row:new", function(){
+                var newRow = new PageBuilder.Entities.Row();
+                rows.add(newRow);
+            });
+
             PageBuilder.mainRegion.show(rowListLayout);
 
         }
