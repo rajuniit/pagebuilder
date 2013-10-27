@@ -1,6 +1,6 @@
 PageBuilder.AddRowView = Marionette.ItemView.extend({
 
-    template: "#addrow-template",
+    template: "#contact-list-panel",
 
     events: {
         "click a.add-row": "showColumnOption"
