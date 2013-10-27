@@ -9,7 +9,6 @@ PageBuilder.addRegions({
 PageBuilder.on('initialize:after', function() {
     Backbone.history.start();
     console.log("Page Builder has started");
-    var addRowView = new PageBuilder.AddRowView({});
-    PageBuilder.content.show(addRowView);
+    PageBuilder.App.List.Controller.listRows();
 });
 

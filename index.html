@@ -30,30 +30,11 @@
 <div class="container" id="content">
 
 </div>
-
-<div id="row-column-opt" class="modal hide fade" data-backdrop="static" data-keyboard="false">
-</div>
-<script type="text/template"id="addrow-template">
+<div class="container">
     <div class="row-container">
         <a href="javascript:void(0);" class="btn btn-success add-row"><i class="icon-plus"></i> Add Row</a>
-    </div>
-</script>
-
-<script type="text/template" id="addcolumn-template">
-
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3>Add New Row</h3>
-        </div>
-        <div class="modal-body">
-            <h4>Simple Layouts</h4>
-            <a class="btn btn-primary columnEle" data-type="1"><i class="icon-plus icon-white"></i> One Column</a>
-            <a class="btn btn-primary columnEle" data-type="2"><i class="icon-plus icon-white"></i> Two Column</a>
-            <a class="btn btn-primary columnEle" data-type="3"><i class="icon-plus icon-white"></i> Three Column</a>
-            <a class="btn btn-primary columnEle" data-type="4"><i class="icon-plus icon-white"></i> Four Column</a>
-        </div>
-
-</script>
+     </div>
+</div>
 
 
 
@@ -64,12 +45,15 @@
 <script src="/js/lib/bootstrap.js"></script>
 <script src="/js/lib/backbone.js"></script>
 <script src="/js/lib/backbone.marionette.js"></script>
+<script src="/js/lib/backbone.babysitter.js"></script>
 
 <!-- Load Core PageBuilder -->
+<script src="/js/Templates.js"></script>
 <script src="/js/core/PageBuilder.js"></script>
 <script src="/js/core/ModalRegion.js"></script>
-<script src="/js/core/views/AddRowView.js"></script>
-<script src="/js/core/views/AddColumnView.js"></script>
+<script src="/js/repositories/rows.js"></script>
+<script src="/js/rows/list/list_view.js"></script>
+<script src="/js/rows/list/list_controller.js"></script>
 <script src="/js/core/App.js"></script>
 
 </body>
