@@ -18,7 +18,7 @@ PageBuilder.module("App.List", function(List, PageBuilder, Backbone, Marionette,
             });
 
             rowListPanel.on("row:new", function(){
-                var newRow = new PageBuilder.Entities.Row();
+                var newRow = new PageBuilder.Repositories.Row();
                 rows.add(newRow);
             });
 
