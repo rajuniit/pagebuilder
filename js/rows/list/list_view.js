@@ -11,7 +11,7 @@ PageBuilder.module("App.List", function(List, PageBuilder, Backbone, Marionette,
 
     List.Panel = Marionette.ItemView.extend({
         tagName: 'div',
-        className: 'row-container',
+        className: 'row row-container',
         template: _.template(Templates.RowListPanel),
 
         triggers: {
