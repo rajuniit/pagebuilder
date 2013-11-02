@@ -70,6 +70,19 @@ PageBuilder.module("App.Rows.List", function(List, PageBuilder, Backbone, Marion
                 rowListLayout.panelRegion.show(rowListPanel);
             });
 
+            rowListPanel.on("row:new", function(){
+                var newRow = new PageBuilder.Models.Row();
+                var columns = PageBuilder.request("column:models");
+
+                columns.each(function(column){
+                    column.set('rowCID', newRow.get('cid'));
+                });
+
+                newRow.set('columns', columns);
+                console.log(newRow.get('columns').size());
+                rows.add(newRow);
+            });
+
             PageBuilder.mainRegion.show(rowListLayout);
         },
 
@@ -90,6 +103,19 @@ PageBuilder.module("App.Rows.List", function(List, PageBuilder, Backbone, Marion
             rowListLayout.on("show", function(){
                 rowListLayout.rowsRegion.show(rowListView);
                 rowListLayout.panelRegion.show(rowListPanel);
+            });
+
+            rowListPanel.on("row:new", function(){
+                var newRow = new PageBuilder.Models.Row();
+                var columns = PageBuilder.request("column:models");
+
+                columns.each(function(column){
+                    column.set('rowCID', newRow.get('cid'));
+                });
+
+                newRow.set('columns', columns);
+                console.log(newRow.get('columns').size());
+                rows.add(newRow);
             });
 
             PageBuilder.mainRegion.show(rowListLayout);
