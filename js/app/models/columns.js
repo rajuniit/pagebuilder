@@ -3,8 +3,9 @@ PageBuilder.module("Models", function(Models, PageBuilder, Backbone, Marionette,
     Models.Column = Backbone.Model.extend({
 
         defaults: {
-            elements: null,
-            properties: null
+            element: '',
+            properties: null,
+            rowCID: null
         }
     });
 

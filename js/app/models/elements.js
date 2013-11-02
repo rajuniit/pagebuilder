@@ -2,36 +2,71 @@ PageBuilder.module("Models", function(Models, PageBuilder, Backbone, Marionette,
     Models.Element = Backbone.Model.extend({
 
         defaults: {
-            type: '',
             title: 'untitled',
-            properties: null
+            description: 'test description',
+            type: 'default',
+            properties: [],
+            columnCID: null,
+            rowCID: null,
+            content: null
         }
 
     });
 
-    Models.RowCollection = Backbone.Collection.extend({
+    Models.ElementCollection = Backbone.Collection.extend({
 
-        model: Models.Row
+        model: Models.Element
 
     });
 
-    var rows;
-
-    var initializeRows = function() {
-        rows = new Models.RowCollection();
+    var elements;
+    var defaultElements;
+    var initializeElements = function() {
+        elements = new Models.ElementCollection();
     }
 
-    var RowModel = {
-        getRows: function() {
-            if (rows === undefined ) {
-                initializeRows();
+    var initailizeDefaultElements = function() {
+        var elementsArray = []
+        var textElement = new Models.Element({'title': 'Text Element', description: 'Description Goes Here',
+        type: 'text', content: 'Toggle a modal via JavaScript by clicking the button below. It will slide down ' +
+                'and fade in from the top of the page.'});
+        elementsArray[0] = textElement;
+
+        var videoElement = new Models.Element({'title': 'Video Element', description: 'Description Goes Here',
+        type: 'video'});
+        elementsArray[1] = videoElement;
+
+        var imageElement = new Models.Element({'title': 'Image Element', description: 'Description Goes Here',
+        type: 'image'});
+        elementsArray[2] = imageElement;
+
+        defaultElements = new Models.ElementCollection(elementsArray);
+
+    }
+
+    var ElementModel = {
+        getElements: function() {
+            if (elements === undefined ) {
+                initializeElements();
             }
 
-            return rows;
+            return elements;
+        },
+
+        getDefaultElements: function() {
+            if (defaultElements === undefined ) {
+                initailizeDefaultElements();
+            }
+
+            return defaultElements;
         }
     };
 
-    PageBuilder.reqres.setHandler("row:models", function(){
-        return RowModel.getRows();
+    PageBuilder.reqres.setHandler("element:models", function(){
+        return ElementModel.getElements();
+    });
+
+    PageBuilder.reqres.setHandler("defaultElement:models", function(){
+        return ElementModel.getDefaultElements();
     });
 });

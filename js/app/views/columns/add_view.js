@@ -4,9 +4,9 @@ PageBuilder.module("App.Columns.Add", function(Add, PageBuilder, Backbone, Mario
         tagName: 'div',
         template: _.template(Templates.AddColumn),
 
-        initialize: function(container){
+        initialize: function(model){
             this.title = "Select Layouts";
-            this.container = container;
+            this.model = model;
         },
 
         events: {
@@ -14,7 +14,7 @@ PageBuilder.module("App.Columns.Add", function(Add, PageBuilder, Backbone, Mario
         },
 
         addColumn: function(evt) {
-
+            console.log(this.model);
             evt.preventDefault();
             this.trigger("dialog:close");
 
@@ -25,7 +25,7 @@ PageBuilder.module("App.Columns.Add", function(Add, PageBuilder, Backbone, Mario
                 columnArray[i] = column;
             }
             var columns = new PageBuilder.Models.ColumnCollection(columnArray);
-            PageBuilder.App.Rows.List.Controller.listRows(columns);
+            PageBuilder.App.Rows.List.Controller.updateRow(columns, this.model);
         }
     });
 });

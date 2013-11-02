@@ -20,33 +20,20 @@ PageBuilder.module("App.Rows.List", function(List, PageBuilder, Backbone, Marion
 
     });
 
-
-//    List.Row = Marionette.ItemView.extend({
-//        tagName: 'div',
-//        className: 'row-container',
-//
-//        events: {
-//            "click .js-add-column": "addColumn"
-//        },
-//
-//        addColumn: function(evt) {
-//            var container = this.$el.find('.js-add-column').parent().parent();
-//            PageBuilder.App.Columns.Add.Controller.addColumns(container);
-//        },
-//
-//        getTemplate: function() {
-//            console.log(this.model);
-//            if(this.model.get('columns').length === 0) {
-//                return _.template(Templates.Row);
-//            } else {
-//                return _.template(Templates.Row);
-//            }
-//        }
-//    });
-
     List.ColumnCompositeItemView = Backbone.Marionette.ItemView.extend({
         tagName: 'div',
-        template: _.template(Templates.ColumnElement)
+        template: _.template(Templates.ColumnElement),
+
+        events: {
+            "click .js-add-element": "addElement"
+        },
+
+        addElement: function(evt) {
+            console.log('column model');
+            console.log(this.model.cid);
+            PageBuilder.App.Elements.List.Controller.listElements(this.model);
+        }
+
     });
 
 
@@ -69,7 +56,7 @@ PageBuilder.module("App.Rows.List", function(List, PageBuilder, Backbone, Marion
         },
 
         addColumn: function(evt) {
-            PageBuilder.App.Columns.Add.Controller.addColumns();
+            PageBuilder.App.Columns.Add.Controller.addColumns(this.model);
         }
 
     });
