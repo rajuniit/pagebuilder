@@ -16,7 +16,7 @@ function bundleHtml($file)
 
 
 $bundle = "Templates = {};\n";
-$path   = __DIR__ . '/../js/core/templates';
+$path   = __DIR__ . '/../js/app/templates';
 
 function generateTemplates ($path, $name = false){
 
