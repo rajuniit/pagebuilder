@@ -41,11 +41,6 @@
     position: absolute;
     right: 0;
     display: none;
-    background: #ffffff;
-    border-bottom: 1px solid #333;
-    border-left: 1px solid #333;
-    border-bottom-left-radius: 3px;
-    padding-left: 5px;
 }
 
 .row-options{
@@ -102,12 +97,4 @@
 
 .item-list ul li h5,.item-list ul li p{
     margin: 5px 0;
-}
-
-.text-content{
-    text-align: left;
-}
-
-.ele-settings{
-    text-align: left;
 }

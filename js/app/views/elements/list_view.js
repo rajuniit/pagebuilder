@@ -18,7 +18,6 @@ PageBuilder.module("App.Elements.List", function(List, PageBuilder, Backbone, Ma
 
     List.ElementsCompositeView = Marionette.CompositeView.extend({
 
-        className: 'row row-container',
         template: _.template(Templates.ListElement),
 
         itemView: List.ElementCompositeItemView,
