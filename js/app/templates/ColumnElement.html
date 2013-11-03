@@ -1,7 +1,7 @@
 <% if(element == '') { %>
 <div class="column-region">
     <div class="span4 col-box" id="box_4">
-        <div class="col-box-options">
+        <div class="col-box-options js-column-box-options">
             <a href="#"><i class="icon-edit"></i></a>
             <a href="#"><i class="icon-asterisk settings-options" data-id="4"></i></a>
             <a href="#"><i class="icon-remove remove-me"></i></a>
@@ -11,17 +11,17 @@
     </div>
 </div>
 <% }else{ %>
-    <div class="js-element-region">
-        <div class="span4 col-box" id="box_4">
-            <div class="col-box-options">
-                <a href="#"><i class="icon-edit"></i></a>
-                <a href="#"><i class="icon-asterisk settings-options" data-id="4"></i></a>
-                <a href="#"><i class="icon-remove remove-me"></i></a>
-            </div>
-            <div class="text-content">
-                <%= element.get('content') %>
-            </div>
+<div class="js-element-region">
+    <div class="span4 col-box" id="box_4">
+        <div class="col-box-options js-element-box-options">
+            <a href="#"><i class="icon-edit"></i></a>
+            <a href="#"><i class="icon-asterisk settings-options" data-id="4"></i></a>
+            <a href="#"><i class="icon-remove remove-me"></i></a>
+        </div>
+        <div class="text-content">
+            <%= element.get('content') %>
         </div>
     </div>
+</div>
 <% } %>
 

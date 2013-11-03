@@ -25,13 +25,18 @@ PageBuilder.module("App.Rows.List", function(List, PageBuilder, Backbone, Marion
         template: _.template(Templates.ColumnElement),
 
         events: {
-            "click .js-add-element": "addElement"
+            "click .js-add-element": "addElement",
+            "click div.row-properties": "showOptions"
         },
 
         addElement: function(evt) {
             console.log('column model');
             console.log(this.model.cid);
             PageBuilder.App.Elements.List.Controller.listElements(this.model);
+        },
+
+        showOptions: function() {
+            alert('test');
         }
 
     });
@@ -39,7 +44,7 @@ PageBuilder.module("App.Rows.List", function(List, PageBuilder, Backbone, Marion
 
     List.RowsCompositeView = Marionette.CompositeView.extend({
 
-        className: 'row row-container',
+        className: 'row row-container row-properties',
         template: _.template(Templates.Row),
 
         itemView: List.ColumnCompositeItemView,
@@ -52,11 +57,21 @@ PageBuilder.module("App.Rows.List", function(List, PageBuilder, Backbone, Marion
         },
 
         events: {
-            "click .js-add-column": "addColumn"
+            "click .js-add-column": "addColumn",
+            "mouseover div.row-properties": "showOp",
+            "mouseleave div.row-properties": "hideOp"
         },
 
         addColumn: function(evt) {
             PageBuilder.App.Columns.Add.Controller.addColumns(this.model);
+        },
+
+        showOp: function() {
+            alert('mouse over');
+        },
+
+        hideOp: function() {
+            alert('mouse leave');
         }
 
     });

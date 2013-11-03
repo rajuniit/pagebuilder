@@ -97,4 +97,116 @@
 
 .item-list ul li h5,.item-list ul li p{
     margin: 5px 0;
+}.row-container{
+    margin-top: 10px;
+    border: 1px dotted #e1e1e1;
+    padding: 10px;
+    text-align: center;
+}
+
+.row-container .span12{
+    margin-left: 15px;
+}
+
+.row{
+    position: relative;
+}
+
+.row:hover{
+    display: block;
+    border-color: #333;
+}
+
+.col-box{
+    border: 1px solid #e1e1e1;
+    margin: 5px;
+    min-height: 100px;
+    position: relative;
+}
+
+.col-box a.add-element{
+    margin-top: 10%;
+}
+
+.col-box:hover{
+    border-color: #333;
+}
+
+.col-box:hover .col-box-options{
+    display: block;
+}
+
+.row-options, .col-box-options{
+    position: absolute;
+    right: 0;
+    display: none;
+    background: #ffffff;
+    border-bottom: 1px solid #333;
+    border-left: 1px solid #333;
+    border-bottom-left-radius: 3px;
+    padding-left: 5px;
+}
+
+.row-options{
+    top: -3px;
+}
+
+/*settings box*/
+.settings{
+    border: 1px solid #e1e1e1;
+    text-align: left;
+    padding: 10px 15px;
+}
+
+.settings ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.settings ul li{
+    float: left;
+}
+
+.settings ul li.attr_name{
+    width: 130px;
+}
+
+.settings ul li.attr_box{
+    width: 330px;
+}
+
+.element-list{
+    padding: 10px;
+    text-align: center;
+}
+
+.element-list input[type=text]{
+    margin-top: 10px;
+}
+
+.item-list{
+    text-align: left;
+}
+
+.item-list ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.item-list ul li{
+    border-bottom: 1px dashed #e1e1e1;
+}
+
+.item-list ul li h5,.item-list ul li p{
+    margin: 5px 0;
+}
+
+.text-content{
+    text-align: left;
+}
+
+.ele-settings{
+    text-align: left;
 }
