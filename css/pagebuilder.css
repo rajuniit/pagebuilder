@@ -40,7 +40,6 @@
 .row-options, .col-box-options{
     position: absolute;
     right: 0;
-    display: none;
 }
 
 .row-options{
@@ -139,7 +138,6 @@
 .row-options, .col-box-options{
     position: absolute;
     right: 0;
-    display: none;
     background: #ffffff;
     border-bottom: 1px solid #333;
     border-left: 1px solid #333;
