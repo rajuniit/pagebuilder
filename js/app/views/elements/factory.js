@@ -1,8 +1,8 @@
-PageBuilder.ElementsFactory = {};
+ElementFactory = {};
 
-PageBuilder.ElementsFactory.prototype.elementClass = PageBuilder.App.Elements.Edit.Text;
+ElementFactory.prototype.elementClass = PageBuilder.App.Elements.Edit.Text;
 
-PageBuilder.ElementsFactory.prototype.createElementView = function(type, options) {
+ElementFactory.prototype.createElementView = function(type, options) {
     if (type == 'text') {
         this.elementClass = PageBuilder.App.Elements.Edit.Text;
     } else {

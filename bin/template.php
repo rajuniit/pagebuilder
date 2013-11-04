@@ -17,6 +17,7 @@ function bundleHtml($file)
 
 $bundle = "Templates = {};\n";
 $path   = __DIR__ . '/../js/app/templates';
+$elementTemplatePath = __DIR__. '/../js/app/views/elements/';
 
 function generateTemplates ($path, $name = false){
 
@@ -46,7 +47,29 @@ function generateTemplates ($path, $name = false){
 
 }
 
+function generateTemplatesRecursively($path) {
+    global $bundle;
+
+//    $dirHandle = opendir($path);
+//    $templateDir = '';
+//    echo $path ."\n";
+//    echo $dirHandle. "\n";
+//    while($file = readdir($dirHandle)) {
+//        if(is_dir($path.$file.'/') && $file != '.' && $file != '..') {
+//            if($file == 'templates') $templateDir = $file;
+//            generateTemplatesRecursively($path.$file.'/');
+//        } else {
+//            $fileExtension = pathinfo($path.$file, PATHINFO_EXTENSION);
+//            if($fileExtension == 'html' && $templateDir != '') {
+//                $html = bundleHtml($file->getPathname(), true);
+//                $bundle .= "Templates." . $file->getBasename('.html') . " = '" . $html . "';\n";
+//            }
+//        }
+//    }
+}
+
 generateTemplates ($path);
+generateTemplatesRecursively($elementTemplatePath);
 
 
 

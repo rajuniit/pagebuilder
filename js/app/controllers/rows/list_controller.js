@@ -109,10 +109,7 @@ PageBuilder.module("App.Rows.List", function(List, PageBuilder, Backbone, Marion
 
             rowListView.on("itemview:row:edit", function(childView, model){
 
-                var elementFactory = new PageBuilder.ElementsFactory();
-                var view = elementFactory.createElementView(model.type, {model: model});
 
-                PageBuilder.dialogRegion.show(view);
             });
 
             PageBuilder.mainRegion.show(rowListLayout);

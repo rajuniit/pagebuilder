@@ -1,19 +1,20 @@
-PageBuilder.module("App.Elements.Add", function(Add, PageBuilder, Backbone, Marionette, $, _) {
-    Add.Controller = {
-        addElement: function(model) {
-            var rows = PageBuilder.request("row:models");
+PageBuilder.module("App.Elements.Edit", function(Edit, PageBuilder, Backbone, Marionette, $, _) {
+    Edit.Controller = {
+        editElement: function(model) {
+            var view = this.factoryView(model.get('element').type, {model:model.element});
+            console.log(view);
+        },
 
-            var row = rows.get(model.get('rowCID'));
-            var columns = row.get('columns');
-            var column = columns.get(model.get('columnCID'));
 
-            column.set('element', model);
+        factoryView: function(type, options) {
 
-            row.set('columns', columns);
-            console.log('with element');
-            console.log(row);
-            PageBuilder.App.Elements.List.Controller.listElements(model);
-            PageBuilder.App.Rows.List.Controller.updateColumnElement(row);
+            var view = new Edit.Text(options);
+
+            if (type == 'text') {
+                view = new Edit.Text();
+            }
+
+            return view;
         }
     }
 });
