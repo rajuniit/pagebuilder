@@ -25,8 +25,9 @@ PageBuilder.module("App.Rows.List", function(List, PageBuilder, Backbone, Marion
         template: _.template(Templates.ColumnElement),
 
         events: {
-            "click .js-add-element": "addElement",
-            "click a.js-column-remove": "deleteColumn"
+            "click a.js-add-element": "addElement",
+            "click a.js-column-remove": "deleteColumn",
+            "click a.js-element-remove": "deleteElement"
         },
 
         addElement: function(evt) {
@@ -38,6 +39,11 @@ PageBuilder.module("App.Rows.List", function(List, PageBuilder, Backbone, Marion
         deleteColumn: function(evt) {
            console.log(this.model);
            PageBuilder.App.Rows.List.Controller.deleteColumn(this.model);
+        },
+
+        deleteElement: function(evt) {
+            console.log(this.model);
+            PageBuilder.App.Rows.List.Controller.deleteElement(this.model);
         }
 
     });
@@ -58,12 +64,13 @@ PageBuilder.module("App.Rows.List", function(List, PageBuilder, Backbone, Marion
         },
 
         events: {
-            "click .js-add-column": "addColumn"
+            "click a.js-add-column": "addColumn"
 
         },
 
         triggers: {
-            "click a.js-icon-delete": "row:remove"
+            "click a.js-icon-delete": "row:remove",
+            "click a.js-icon-delete": "row:edit"
         },
 
         addColumn: function(evt) {
