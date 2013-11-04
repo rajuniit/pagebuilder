@@ -50,22 +50,17 @@ function generateTemplates ($path, $name = false){
 function generateTemplatesRecursively($path) {
     global $bundle;
 
-//    $dirHandle = opendir($path);
-//    $templateDir = '';
-//    echo $path ."\n";
-//    echo $dirHandle. "\n";
-//    while($file = readdir($dirHandle)) {
-//        if(is_dir($path.$file.'/') && $file != '.' && $file != '..') {
-//            if($file == 'templates') $templateDir = $file;
-//            generateTemplatesRecursively($path.$file.'/');
-//        } else {
-//            $fileExtension = pathinfo($path.$file, PATHINFO_EXTENSION);
-//            if($fileExtension == 'html' && $templateDir != '') {
-//                $html = bundleHtml($file->getPathname(), true);
-//                $bundle .= "Templates." . $file->getBasename('.html') . " = '" . $html . "';\n";
-//            }
-//        }
-//    }
+    $ite = new RecursiveDirectoryIterator($path);
+
+    foreach (new RecursiveIteratorIterator($ite) as $filename=>$cur) {
+
+            $fileExtension = pathinfo($filename, PATHINFO_EXTENSION);
+            if($fileExtension == 'html') {
+                $fileInfo = pathinfo($filename);
+                $html = bundleHtml($filename, true);
+                $bundle .= "Templates." . $fileInfo['filename'] . " = '" . $html . "';\n";
+            }
+    }
 }
 
 generateTemplates ($path);
