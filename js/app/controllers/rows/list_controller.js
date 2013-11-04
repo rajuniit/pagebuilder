@@ -109,6 +109,9 @@ PageBuilder.module("App.Rows.List", function(List, PageBuilder, Backbone, Marion
 
             rowListView.on("itemview:row:edit", function(childView, model){
 
+                var view = new PageBuilder.App.Elements.Edit.T({
+                    model: model
+                });
             });
 
             PageBuilder.mainRegion.show(rowListLayout);
