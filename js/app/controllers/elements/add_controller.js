@@ -12,6 +12,7 @@ PageBuilder.module("App.Elements.Add", function(Add, PageBuilder, Backbone, Mari
             row.set('columns', columns);
             console.log('with element');
             console.log(row);
+            PageBuilder.App.Elements.List.Controller.listElements(model);
             PageBuilder.App.Rows.List.Controller.updateColumnElement(row);
         }
     }

@@ -1,6 +1,12 @@
 PageBuilder.module("App.Elements.List", function(List, PageBuilder, Backbone, Marionette, $, _) {
     List.Controller = {
-        listElements: function(model) {
+        listElements: function(element) {
+            console.log(element);
+            var elements = PageBuilder.request("element:models");
+            elements.add(element);
+        },
+
+        listDefaultElements: function(model) {
             console.log(model);
             var elements = PageBuilder.request("defaultElement:models");
             elements.each(function(element){
@@ -13,7 +19,6 @@ PageBuilder.module("App.Elements.List", function(List, PageBuilder, Backbone, Ma
             console.log('elements');
             console.log(elements);
             PageBuilder.dialogRegion.show(elementListView);
-
         }
     }
 });

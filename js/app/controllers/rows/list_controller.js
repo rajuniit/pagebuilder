@@ -35,6 +35,9 @@ PageBuilder.module("App.Rows.List", function(List, PageBuilder, Backbone, Marion
 
         updateColumnElement: function(row) {
             var rows = PageBuilder.request("row:models");
+            var elements = PageBuilder.request("element:models");
+            console.log('elements');
+            console.log(elements);
             rows.add(row);
             console.log(rows);
             this.renderRowList(rows);

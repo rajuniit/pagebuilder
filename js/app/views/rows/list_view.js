@@ -33,7 +33,7 @@ PageBuilder.module("App.Rows.List", function(List, PageBuilder, Backbone, Marion
         addElement: function(evt) {
             console.log('column model');
             console.log(this.model.cid);
-            PageBuilder.App.Elements.List.Controller.listElements(this.model);
+            PageBuilder.App.Elements.List.Controller.listDefaultElements(this.model);
         },
 
         deleteColumn: function(evt) {
@@ -70,7 +70,7 @@ PageBuilder.module("App.Rows.List", function(List, PageBuilder, Backbone, Marion
 
         triggers: {
             "click a.js-icon-delete": "row:remove",
-            "click a.js-icon-delete": "row:edit"
+            "click a.js-icon-edit": "row:edit"
         },
 
         addColumn: function(evt) {
