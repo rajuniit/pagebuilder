@@ -59,6 +59,10 @@ PageBuilder.module("Models", function(Models, PageBuilder, Backbone, Marionette,
             }
 
             return defaultElements;
+        },
+
+        getNewElement: function(options) {
+            new Models.Element(options);
         }
     };
 
@@ -68,5 +72,9 @@ PageBuilder.module("Models", function(Models, PageBuilder, Backbone, Marionette,
 
     PageBuilder.reqres.setHandler("defaultElement:models", function(){
         return ElementModel.getDefaultElements();
+    });
+
+    PageBuilder.reqres.setHandler("new_element:models", function(options){
+       return ElementModel.getNewElement(options);
     });
 });

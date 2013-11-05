@@ -1,8 +1,12 @@
 PageBuilder.module("App.Elements.List", function(List, PageBuilder, Backbone, Marionette, $, _) {
     List.Controller = {
         listElements: function(element) {
+            console.log('element 1');
             console.log(element);
             var elements = PageBuilder.request("element:models");
+            console.log('elements 1')
+            console.log(elements);
+            console.log('elements 1');
             elements.add(element);
         },
 
