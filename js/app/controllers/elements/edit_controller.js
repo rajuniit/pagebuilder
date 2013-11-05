@@ -1,20 +1,10 @@
 PageBuilder.module("App.Elements.Edit", function(Edit, PageBuilder, Backbone, Marionette, $, _) {
     Edit.Controller = {
         editElement: function(model) {
-            var view = this.factoryView(model.get('element').type, {model:model.element});
-            console.log(view);
-        },
-
-
-        factoryView: function(type, options) {
-
-            var view = new Edit.Text(options);
-
-            if (type == 'text') {
-                view = new Edit.Text();
+            console.log(model.get('element').get('type'));
+            if(model.get('element').get('type') == 'text') {
+                PageBuilder.App.Elements.Text.Controller.edit(model);
             }
-
-            return view;
         }
     }
 });

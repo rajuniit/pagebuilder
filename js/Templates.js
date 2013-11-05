@@ -10,4 +10,5 @@ Templates.RowColumn = '<div class="modal-header"> <button type="button" class="c
 Templates.RowListLayout = '<div id="rows-region"></div> <div id="panel-region"></div>';
 Templates.RowListPanel = '<a href="javascript:void(0);" class="btn add-row btn-mini js-add-row"><i class="icon-plus"></i>Add Row</a>';
 Templates.StaticRow = '<a href="javascript:void(0);" class="btn btn-success add-row"><i class="icon-plus"></i> Add Row</a>';
-Templates.TextEditView = '<h4>Text Settings</h4> <textarea class="editor"><%= this.content %></textarea> <br/> <input type="button" value="Update" class="btn btn-success btn-mini"/>';
+Templates.TextEditView = '<h4>Text Settings</h4> <form> <textarea class="editor" name="content"><%= element.get(\'content\') %></textarea> <br/> <input type="button" value="Update" class="btn btn-success btn-mini js-btn-update"/> </form>';
+Templates.TextShowView = '<%= element.get(\'content\') %>';

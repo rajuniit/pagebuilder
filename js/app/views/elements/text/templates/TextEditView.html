@@ -1,4 +1,6 @@
 <h4>Text Settings</h4>
-<textarea class="editor"><%= this.content %></textarea>
+<form>
+<textarea class="editor" name="content"><%= element.get('content') %></textarea>
 <br/>
-<input type="button" value="Update" class="btn btn-success btn-mini"/>
+<input type="button" value="Update" class="btn btn-success btn-mini js-btn-update"/>
+</form>

@@ -48,6 +48,7 @@ PageBuilder.module("App.Rows.List", function(List, PageBuilder, Backbone, Marion
         },
 
         editElement: function(evt) {
+            evt.preventDefault();
             console.log(this.model);
             PageBuilder.App.Elements.Edit.Controller.editElement(this.model);
         }
